@@ -20,7 +20,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/fahadahammed/linux
 
 
 ## OpenBangla Keyboard:
-sudo xbps-install ibus ibus-devel
+Install ibus and ibus-devel (e.g. in Void Linux: sudo xbps-install ibus ibus-devel)
 git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git
 cd OpenBangla-Keyboard
 mkdir build && cd build
