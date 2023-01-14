@@ -1,0 +1,67 @@
+##---------------------------------------------------------------------##
+##      ____                    _         _         _  ______  _____
+##     | __ )  __ _ _ __   __ _| | __ _  (_)_ __   | |/ /  _ \| ____|
+##     |  _ \ / _` | '_ \ / _` | |/ _` | | | '_ \  | ' /| | | |  _|
+##     | |_) | (_| | | | | (_| | | (_| | | | | | | | . \| |_| | |___
+##     |____/ \__,_|_| |_|\__, |_|\__,_| |_|_| |_| |_|\_\____/|_____|
+##                        |___/
+##---------------------------------------------------------------------##
+##------------------------- asifakonjee@Linux--------------------------##
+##--------------https://www.youtube.com/@dr.asifakonjee ---------------##
+
+
+## Install Bangla Fonts:
+
+wget --no-check-certificate https://raw.githubusercontent.com/fahadahammed/linux-bangla-fonts/master/font.sh -O font.sh;chmod +x font.sh;bash font.sh;rm font.sh
+
+or,
+
+wget --no-check-certificate https://raw.githubusercontent.com/fahadahammed/linux-bangla-fonts/master/dist/lbfi -O lbfi;chmod +x lbfi;./lbfi
+
+
+## OpenBangla Keyboard:
+sudo xbps-install ibus ibus-devel
+git clone --recursive https://github.com/OpenBangla/OpenBangla-Keyboard.git
+cd OpenBangla-Keyboard
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+
+
+## MSCoreFonts install in Void Linux:
+git clone https://github.com/void-linux/void-packages.git
+cd void-packages
+echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+./xbps-src binary-bootstrap\
+./xbps-src pkg msttcorefonts
+xi msttcorefonts
+
+
+## Configure on KDE Plasma:
+## Add these lines on your .bashrc or .zshrc
+# Ibus KDE
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
+## Addtional settings:
+## Add these lines in your /etc/environment
+GTK_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+QT_IM_MODULE=ibus
+
+## Additional Bangla Font settings:
+## To set Siyam Rupali Font as sans-serif add these lines in ~/.config/fontconfig/fonts.conf (Before </fontconfig>)
+
+<alias>
+ <family>sans-serif</family>
+ <prefer>
+ <family>Siyam Rupali</family>
+ <family>Siyam Rupali</family>
+ </prefer>
+</alias>
+
+or
+
+Copy the directory of this repository named conf.d in your ~/.config/fontconfig directory.
