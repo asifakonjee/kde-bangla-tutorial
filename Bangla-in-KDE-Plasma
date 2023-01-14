@@ -33,7 +33,7 @@ sudo make install
 git clone https://github.com/void-linux/void-packages.git
 cd void-packages
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
-./xbps-src binary-bootstrap\
+./xbps-src binary-bootstrap
 ./xbps-src pkg msttcorefonts
 xi msttcorefonts
 
