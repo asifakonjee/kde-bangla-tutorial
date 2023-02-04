@@ -45,13 +45,15 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
-## Addtional settings:
+## Addtional settings 01(If you are still having problems with Bangla fonts in different apps):
+
 ## Add these lines in your /etc/environment
 GTK_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 QT_IM_MODULE=ibus
 
-## Additional Bangla Font settings:
+
+## Additional settings 02:
 ## To set Siyam Rupali Font as sans-serif add these lines in ~/.config/fontconfig/fonts.conf (Before </fontconfig>)
 
 <alias>
@@ -62,6 +64,11 @@ QT_IM_MODULE=ibus
  </prefer>
 </alias>
 
-or
+## If it does not work fixing system wide Bangla fonts, then
 
 Copy the directory of this repository named conf.d in your ~/.config/fontconfig directory.
+
+or 
+
+Copy 90-bengali.conf file in that folder to /etc/fonts/conf.d/ 
+
